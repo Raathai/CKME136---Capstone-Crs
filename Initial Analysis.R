@@ -40,3 +40,14 @@ genuine <- subset(CreditCard, CreditCard$Class=='0')
 summary(fraud$Amount)
 summary(genuine$Amount)
 
+#Correlation Matrix
+cor(CreditCard)
+
+#Correlation between each variable and target variable
+correlation <- cor(CreditCard[1:30], CreditCard$Class, method = "pearson")
+correlation
+
+#Visualize correlation matrix
+install.packages("corrplot")
+library("corrplot")
+corrplot(cor(CreditCard))
